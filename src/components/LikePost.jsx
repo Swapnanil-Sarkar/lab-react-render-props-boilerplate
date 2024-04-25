@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
+// LikePost.jsx
+import React from 'react';
+import withLikeFunctionality from './withLikeFunctionality';
 
-export default function LikePost() {
-
-  const [likePostCounter, setPostCounter] = useState(0);
-
-  const handlePostCount = ()=>{
-    setPostCounter(likePostCounter+1);
-  }
-
+function LikePost({ likeCounter, handleLike }) {
   return (
     <div>
-      <button onClick={handlePostCount}>Like Post {likePostCounter}</button>
+      <button onClick={handleLike}>Like Post {likeCounter}</button>
     </div>
-  )
+  );
 }
+
+export default withLikeFunctionality(LikePost);
