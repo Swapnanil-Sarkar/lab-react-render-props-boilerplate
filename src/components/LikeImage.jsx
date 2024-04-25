@@ -1,13 +1,14 @@
-// LikeImage.jsx
 import React from 'react';
-import withLikeFunctionality from './withLikeFunctionality';
+import LikeComponent from './LikeComponent';
 
-function LikeImage({ likeCounter, handleLike }) {
+export default function LikeImage() {
   return (
-    <div>
-      <button onClick={handleLike}>Like Image {likeCounter}</button>
-    </div>
+    <LikeComponent>
+      {(likeCounter, handleLike) => (
+        <div>
+          <button onClick={handleLike}>Like Image {likeCounter}</button>
+        </div>
+      )}
+    </LikeComponent>
   );
 }
-
-export default withLikeFunctionality(LikeImage);
